@@ -280,6 +280,7 @@ class BaseResource
         uri.setHost(configuration.getControlBaseUrl());
         uri.setPath(path);
 
+        request.setHeader("Content-Type", "application/json");
         request.setHeader("Authorization", String.format("Bearer %s", token));
 
         try
