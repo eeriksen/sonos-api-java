@@ -11,7 +11,15 @@ import engineer.nightowl.sonos.api.exception.SonosApiError;
  *
  * @see <a href="https://developer.sonos.com/reference/control-api/audioclip/">Sonos docs</a>
  */
-public class AudioClipResource extends BaseResource {
+public class AudioClipResource extends SubscribableResource {
+
+
+    @Override
+    String getSubscriptionPath()
+    {
+        return "/v1/players/%s/audioClip/subscription";
+    }
+
     /**
      * <p>Constructor for AudioClipResource.</p>
      *
